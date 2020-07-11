@@ -1,0 +1,20 @@
+.Encase {
+	box-sizing: border-box;
+	margin: auto;
+	width: 80%;
+	padding: 10px
+}
+
+.Divencase {
+	display: inline-grid;
+	padding: 30px;
+	border-style: solid;
+	border-width: 1px;
+	align-items: center;
+	box-shadow: 1px 1px 1px gray;
+	border-color: grey
+}
+
+.Name {
+	text-transform: capitalize;
+}

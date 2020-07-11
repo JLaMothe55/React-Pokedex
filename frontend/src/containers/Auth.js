@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
 import axios from 'axios';
+
+import classes from './Auth.module.css';
 
 class Auth extends Component {
     constructor(props) {
@@ -40,16 +41,23 @@ class Auth extends Component {
         }
 
         return (
-            <form onSubmit={this.onSubmit}>
-                
-                <label for="usernameOrEmail">Username or Email:</label>
-                <input type="text" onChange={this.onChange} name="usernameOrEmail" value={this.state.username} />
-                
-                <label for="password">Password:</label>
-                <input type="password" onChange={this.onChange} name="password" value={this.state.password} />
+			<div className={classes.MainDiv}>
+				<form onSubmit={this.onSubmit}>
+					
+					<div className={classes.MinorDiv}>
+						<h4 className={classes.H4} for="usernameOrEmail">Username or Email:</h4>
+						<input className={classes.Input} type="text" onChange={this.onChange} name="usernameOrEmail" value={this.state.username} />
 
-                <input type="submit" name="Submit" value="Sign in" />
-            </form>
+						<h4 className={classes.H4} for="password">Password:</h4>
+						<input className={classes.Input} type="password" onChange={this.onChange} name="password" value={this.state.password} />
+
+					</div>
+                
+					
+					<input type="submit" name="Submit" value="Sign in" />
+            	</form>
+			</div>
+            
         );
     }
 }

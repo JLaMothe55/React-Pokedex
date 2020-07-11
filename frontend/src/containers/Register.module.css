@@ -1,0 +1,27 @@
+.MainDiv {
+	text-align: center;
+	margin-top: 5%;
+	margin-left: 31%;
+	margin-right: 31%;
+	border-style: solid;
+	padding-bottom: 30px;
+	border-color: black;
+	border-width: 2px
+}
+
+.MinorDiv {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.H4 {
+	text-align: left;
+	padding-right: 20px;
+	
+}
+
+.Input {
+	float: right;
+	
+	
+}

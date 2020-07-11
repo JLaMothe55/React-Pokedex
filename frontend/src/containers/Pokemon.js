@@ -11,12 +11,12 @@ class Pokemon extends Component {
         };
     }
 
-    async componentDidMount() {
-        const favoritePokemonIds = await favoriteService.getAll();
-        this.setState({
-            favorited: this.isFavorite(favoritePokemonIds),
-        });
-    }
+    // async componentDidMount() {
+    //     const favoritePokemonIds = await favoriteService.getAll();
+    //     this.setState({
+    //         favorited: this.isFavorite(favoritePokemonIds),
+    //     });
+    // }
 
     isFavorite = favoritePokemonIds => favoritePokemonIds.filter((pokemonId) => this.props.pokemon._id === pokemonId) > -1;
 

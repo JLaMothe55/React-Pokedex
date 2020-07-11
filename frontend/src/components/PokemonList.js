@@ -1,20 +1,22 @@
 import React from 'react';
 
+import classes from './PokemonList.module.css';
+
 const PokemonList = (props) => {
 
     const renderPokemonSummary = (pokemon) => (
 		
-        <div onClick={() => props.onClickHandler(pokemon)}>
+        <div className={classes.Divencase} onClick={() => props.onClickHandler(pokemon)}>
 			{(pokemon.sprites[0]) ? (<img src={pokemon.sprites[0].front_default} />) : (<p>no image found</p>)}
             
             <p>#{pokemon.id}</p>
-            <p>{pokemon.name}</p>
+            <p className={classes.Name}>{pokemon.name}</p>
 			
         </div>
     );
 
     return (
-        <div>
+        <div className={classes.Encase}>
             {props.pokemon.map( renderPokemonSummary )}
         </div>
     );

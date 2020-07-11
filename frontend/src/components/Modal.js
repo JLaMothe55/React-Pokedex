@@ -1,13 +1,17 @@
 import React from 'react';
 
 import Aux from '../utils/Aux';
+import classes from './Modal.module.css';
 
 const Modal = (props) => (
     <Aux>
-        <button onClick={props.onClose}>Close</button>
-        <div>
-            {props.children}
-        </div>
+		<div className={classes.Modal}>
+			<button className={classes.Button} onClick={props.onClose}>X</button>
+        	<div>
+            	{props.children}
+        	</div>
+		</div>
+        
     </Aux>
 );
 

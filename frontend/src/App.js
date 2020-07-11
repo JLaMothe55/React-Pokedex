@@ -55,7 +55,7 @@ class App extends Component{
       <Aux>
         <Router>
           <Layout />
-          <div>
+          <div style={{marginTop: "80px"}}>
             <Switch>
               <Route exact path="/">
                 <FeaturedPokedex />

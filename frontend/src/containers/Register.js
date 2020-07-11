@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
 import axios from 'axios';
+
+import classes from './Register.module.css';
 
 class Register extends Component {
     constructor(props) {
@@ -43,25 +44,32 @@ class Register extends Component {
         }
 
         return (
-            <form onSubmit={this.onSubmit}>
-                
-                <label for="username">Username:</label>
-                <input type="text" onChange={this.onChange} name="username" value={this.state.username} />
-                
-                <label for="email">Email:</label>
-                <input type="text" onChange={this.onChange} name="email" value={this.state.email} />
-                
-                <label for="firstName">First Name:</label>
-                <input type="text" onChange={this.onChange} name="firstName" value={this.state.firstName} />
-                
-                <label for="lastName">Last Name:</label>
-                <input type="text" onChange={this.onChange} name="lastName" value={this.state.lastName} />
-                
-                <label for="password">Password:</label>
-                <input type="password" onChange={this.onChange} name="password" value={this.state.password} />
-                
-                <input type="submit" name="Submit" value="Sign up" />
-            </form>
+			<div className={classes.MainDiv}>
+				<h3>Sign Up!</h3>
+				<form onSubmit={this.onSubmit}>
+					<div className={classes.MinorDiv}>
+						 <h4 className={classes.H4} for="username">Username:</h4>
+						<input className={classes.Input} type="text" onChange={this.onChange} name="username" value={this.state.username} />
+
+						<h4 className={classes.H4} for="email">Email:</h4>
+						<input className={classes.Input} type="text" onChange={this.onChange} name="email" value={this.state.email} />
+
+						<h4 className={classes.H4} for="firstName">First Name:</h4>
+						<input className={classes.Input} type="text" onChange={this.onChange} name="firstName" value={this.state.firstName} />
+
+						<h4 className={classes.H4} for="lastName">Last Name:</h4>
+						<input className={classes.Input} type="text" onChange={this.onChange} name="lastName" value={this.state.lastName} />
+
+						<h4 className={classes.H4} for="password">Password:</h4>
+						<input className={classes.Input} type="password" onChange={this.onChange} name="password" value={this.state.password} />
+					</div>
+					<div>
+						<input type="submit" name="Submit" value="Sign up" />
+					</div>
+                	
+            	</form>
+			</div>
+           
         );
     }
 }

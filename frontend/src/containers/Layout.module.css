@@ -1,0 +1,25 @@
+.Content {
+	margin-top: 16px;
+}
+
+.Navbar {
+	height: 56px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #CC0000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	box-sizing: border-box;
+	z-index: 90;
+	border-color: black;
+	border-style: solid;
+	
+}
+
+.Info {
+	color: white
+}
