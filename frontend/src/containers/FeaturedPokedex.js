@@ -11,15 +11,17 @@ class FeaturedPokedex extends Component {
         this.state = {
             pokemon: [],
             selected: null,
+            page: 0
         };
     }
 
     async componentDidMount() {
 
-        const pokemon = await pokemonService.getAll();
+        const pokemon = await pokemonService.getAll(this.state.page);
 
         this.setState({
             pokemon: pokemon,
+            page: this.state.page + 1
         });
     }
 
@@ -31,11 +33,23 @@ class FeaturedPokedex extends Component {
         this.setState({selected: null});
     }
 
+    getNext60Pokemon = async () => {
+
+        const morePokemon = await pokemonService.getAll(this.state.page);
+
+        this.setState({
+            pokemon: this.state.pokemon.concat(morePokemon),
+            page: this.state.page + 1
+        })
+       
+       
+    }
+
     render() {
         return (
             <Aux>
                 {(this.state.pokemon.length > 0) ? 
-                    (<PokemonList pokemon={this.state.pokemon} onClickHandler={this.onClickHandler} />) :
+                    (<PokemonList pokemon={this.state.pokemon} onClickHandler={this.onClickHandler} getNext60Pokemon={this.getNext60Pokemon} />) :
                     (<p>Loading pokemon...</p>)
                 }
                 {(this.state.selected) ?

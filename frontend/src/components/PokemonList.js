@@ -11,13 +11,13 @@ const PokemonList = (props) => {
             
             <p>#{pokemon.id}</p>
             <p className={classes.Name}>{pokemon.name}</p>
-			
         </div>
     );
 
     return (
         <div className={classes.Encase}>
             {props.pokemon.map( renderPokemonSummary )}
+            <button onClick={props.getNext60Pokemon}>The next 60</button>
         </div>
     );
 };

@@ -6,8 +6,13 @@ const mongoose = require('mongoose');
 const app = express();
 
 mongoose.connect(
-    process.env.MONGODSN ? process.env.MONGODSN : 'mongodb://localhost/pokedex', 
-    {useNewUrlParser: true}
+    process.env.MONGODSN ? process.env.MONGODSN : 'mongodb://localhost:27017/pokedex', 
+    { // TODO : Load from .env file
+        useNewUrlParser: true,
+        user: 'root',
+        pass: 'password',
+        authSource: "admin"
+    }
 );
 require('./models/PokemonModel');
 require('./models/UserModel');
