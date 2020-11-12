@@ -1,32 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import classes from './PokemonList.module.css';
 
-const PokemonList = (props) => {
 
-    const renderPokemonSummary = (pokemon) => (
-		(pokemon.id >= props.idStart && pokemon.id <= props.idEnd) ?  
-        (<div className={classes.Divencase} onClick={() => props.onClickHandler(pokemon)}>
+
+//{(elipsedName <= 10 ) ? (elipsedName += letter) : (elipsedName += '...') }
+//pokemon.name.forEach(letter => ())
+
+class PokemonList extends Component {
+    constructor(props) {
+        super(props);
+        
+    }
+
+    nameElipses = (name) => {
+        
+        return name.slice(0, 7).concat("...")
+
+        // let elipsedName = "";
+        // name.split('').forEach(letter => {(elipsedName.length <= 10) ? (elipsedName += letter) : (elipsedName += '...') } );
+        // return elipsedName
+    }
+    
+    pokemonFilter = (pokemon) => pokemon.id >= this.props.idStart && pokemon.id <= this.props.idEnd;
+    
+
+    renderPokemonSummary = (pokemon) => (
+    <div className={classes.Divencase} onClick={() => this.props.onClickHandler(pokemon)}>
             
-			{(pokemon.sprites[0]) ? (<img src={pokemon.sprites[0].front_default} />) : (<p>no image found</p>)}
+			{(pokemon.sprites[0]) ? (<img className={classes.ImageStyling} src={pokemon.sprites[0].front_default} />) : (<p>no image found</p>)}
             
             <p>#{pokemon.id}</p>
-            <p className={classes.Name}>{pokemon.name}</p>
-        </div>) : (null)
-    );
-    console.log(props.generationName)
-    return (
-        
-        <div className={classes.Encase}>
 
-            {props.pokemon.map( renderPokemonSummary )}
-            <div>
-            {(props.page <= 13 && props.pokemon.length-1 <= props.idEnd) ?
-                (<button onClick={props.getNext60Pokemon}>The next 60</button>) :
-                (null)}
-            </div>
-         </div>
+            {(pokemon.name.length <= 10) ? (<p className={classes.Name}>{pokemon.name}</p>) : (<p className={classes.Name}>{this.nameElipses(pokemon.name)}</p>)}
+            
+        </div>
     );
+
+
+
+    render(){
+        return (
+            <div className={classes.Encase}>
+    
+                {this.props.pokemon.filter(this.pokemonFilter).map(this.renderPokemonSummary)}
+                
+             </div>
+        );
+    }
 };
+
+
+
+    
+
+   
+    
+    
+
 
 export default PokemonList;

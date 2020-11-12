@@ -48,20 +48,32 @@ class Register extends Component {
 				<h3>Sign Up!</h3>
 				<form onSubmit={this.onSubmit}>
 					<div className={classes.MinorDiv}>
-						 <h4 className={classes.H4} for="username">Username:</h4>
-						<input className={classes.Input} type="text" onChange={this.onChange} name="username" value={this.state.username} />
 
-						<h4 className={classes.H4} for="email">Email:</h4>
-						<input className={classes.Input} type="text" onChange={this.onChange} name="email" value={this.state.email} />
-
-						<h4 className={classes.H4} for="firstName">First Name:</h4>
-						<input className={classes.Input} type="text" onChange={this.onChange} name="firstName" value={this.state.firstName} />
-
-						<h4 className={classes.H4} for="lastName">Last Name:</h4>
-						<input className={classes.Input} type="text" onChange={this.onChange} name="lastName" value={this.state.lastName} />
-
-						<h4 className={classes.H4} for="password">Password:</h4>
-						<input className={classes.Input} type="password" onChange={this.onChange} name="password" value={this.state.password} />
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="username">Username:</label>
+						    <input className={classes.Input} type="text" onChange={this.onChange} name="username" value={this.state.username} />
+                        </div>
+						
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="email">Email:</label>
+						    <input className={classes.Input} type="text" onChange={this.onChange} name="email" value={this.state.email} />
+                        </div>
+						
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="firstName">First Name:</label>
+						    <input className={classes.Input} type="text" onChange={this.onChange} name="firstName" value={this.state.firstName} />
+                        </div>
+						
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="lastName">Last Name:</label>
+						    <input className={classes.Input} type="text" onChange={this.onChange} name="lastName" value={this.state.lastName} />
+                        </div>
+						
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="password">Password:</label>
+						    <input className={classes.Input} type="password" onChange={this.onChange} name="password" value={this.state.password} />
+                        </div>
+						
 					</div>
 					<div>
 						<input type="submit" name="Submit" value="Sign up" />

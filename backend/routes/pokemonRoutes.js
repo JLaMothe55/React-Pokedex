@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const CacheHandler = require('../services/CacheHandler');
+var Pokemon = require('../models/PokemonModel');
 
 
 module.exports = (app) => {
@@ -19,5 +20,16 @@ module.exports = (app) => {
             pokemon: results,
         });
     });
+
+    app.get(`/api/getPokemonById`, async (req, res) => {
+        
+        const results = await Pokemon.findById(req.query.pokemonId)
+        console.log(results)
+        return res.send({
+            pokemon: results
+        });
+    });
 };
+
+
 

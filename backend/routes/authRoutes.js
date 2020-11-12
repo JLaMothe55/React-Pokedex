@@ -78,7 +78,7 @@ module.exports = (app) => {
         });
     });
 
-    app.post('/api/postFavorite', sessionParser, async (req, res) => {
+    app.post('/api/postFavorites', sessionParser, async (req, res) => {
 
         const favorite = req.body.pokemonId;
         const userRecord = req.session.userRecord;

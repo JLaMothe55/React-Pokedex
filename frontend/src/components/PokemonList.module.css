@@ -1,7 +1,9 @@
 .Encase {
 	box-sizing: border-box;
 	margin: auto;
-	width: 80%;
+	margin-left: 17%;
+	
+	max-width: 70%;
 	padding: 10px
 }
 
@@ -12,9 +14,17 @@
 	border-width: 1px;
 	align-items: center;
 	box-shadow: 1px 1px 1px gray;
-	border-color: grey
+	border-color: grey;
+
 }
 
 .Name {
 	text-transform: capitalize;
+}
+
+.ImageStyling {
+	max-width: 90px;
+	max-height: 90px;
+	min-width: 90px;
+	min-height: 90px;
 }

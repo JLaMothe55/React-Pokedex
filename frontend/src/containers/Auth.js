@@ -42,18 +42,20 @@ class Auth extends Component {
 
         return (
 			<div className={classes.MainDiv}>
+                <h3>Sign In!</h3>
 				<form onSubmit={this.onSubmit}>
 					
 					<div className={classes.MinorDiv}>
-						<h4 className={classes.H4} for="usernameOrEmail">Username or Email:</h4>
-						<input className={classes.Input} type="text" onChange={this.onChange} name="usernameOrEmail" value={this.state.username} />
-
-						<h4 className={classes.H4} for="password">Password:</h4>
-						<input className={classes.Input} type="password" onChange={this.onChange} name="password" value={this.state.password} />
-
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="usernameOrEmail">Username or Email:</label>
+						    <input className={classes.Input} type="text" onChange={this.onChange} name="usernameOrEmail" value={this.state.username} />
+                        </div>
+						
+                        <div className={classes.LabelDiv}>
+                            <label className={classes.Label} for="password">Password:</label>
+						    <input className={classes.Input} type="password" onChange={this.onChange} name="password" value={this.state.password} />
+                        </div>
 					</div>
-                
-					
 					<input type="submit" name="Submit" value="Sign in" />
             	</form>
 			</div>

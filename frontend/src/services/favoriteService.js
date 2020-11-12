@@ -7,9 +7,11 @@ const getAll = async () => {
 };
 
 const postFavorite = async (pokemon) => {
+    console.log(pokemon)
     const res = await axios.post('/api/postFavorites', {
         pokemonId: pokemon._id,
     }).catch(err => console.error(err));
+    console.log(res.data)
     return res.data.favoritePokemonIds;
 };
 

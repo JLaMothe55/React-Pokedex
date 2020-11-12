@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import axios from 'axios';
+import cookie from 'react-cookies';
 
 import Auth from './containers/Auth';
 import Aux from './utils/Aux';
@@ -50,15 +51,27 @@ class App extends Component{
       });
   }
 
+  logout = async () => {
+
+    cookie.remove('PokeSesh')
+
+    this.setState({
+      username: null,
+      firstName: null,
+      lastName: null,
+      loggedIn: false,
+    })
+}
+
   render() {
     return (
       <Aux>
         <Router>
-          <Layout />
+          <Layout loggedIn={this.state.loggedIn} logout={this.logout}/>
           <div style={{marginTop: "80px"}}>
             <Switch>
               <Route exact path="/">
-                <FeaturedPokedex />
+                <FeaturedPokedex loggedIn={this.state.loggedIn}/>
               </Route>
               <Route path="/auth">
                 <Auth checkSession={this.checkSession} />
@@ -67,7 +80,7 @@ class App extends Component{
                 <Register />
               </Route>
               <Route path="/userPage">
-                <UserPage />
+                <UserPage loggedIn={this.state.loggedIn} />
               </Route>
             </Switch>
           </div>

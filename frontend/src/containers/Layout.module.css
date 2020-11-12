@@ -21,5 +21,6 @@
 }
 
 .Info {
-	color: white
+	color: white;
+	text-decoration: underline;
 }

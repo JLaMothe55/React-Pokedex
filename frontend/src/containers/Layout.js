@@ -7,10 +7,18 @@ class Layout extends Component {
     render() {
         return (
             <div className={classes.Navbar}>
-                <Link to="/auth" className={classes.Info}>Sign In</Link>
+                {(!this.props.loggedIn) ? (
+                    <Link to="/auth" className={classes.Info}>Sign In</Link>
+                ) : (
+                    <p className={classes.Info} onClick={() => this.props.logout()}>Signout</p>
+                )}
+                
                 <Link to="/" className={classes.Info}>Home</Link>
-                <Link to="/register" className={classes.Info}>Register</Link>
-                <Link to="/userPage" className={classes.Info}>User Page</Link>
+                {(!this.props.loggedIn) ? (
+                    <Link to="/register" className={classes.Info}>Register</Link>
+                ) : (
+                    <Link to="/userPage" className={classes.Info}>User Page</Link>
+                )}
             </div>
         );
     }

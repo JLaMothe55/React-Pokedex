@@ -10,10 +10,10 @@ module.exports = function() {
 
         return new Promise(function(resolve, reject) {
 
-            Pokemon.find({ id : { $gt: OFFSET * page }})
+            Pokemon.find({ id : { $gt: OFFSET * page, $lt:10000 }})
                 .limit(OFFSET).sort('id').then(function(pokemonList) {
 
-                if (pokemonList.length != OFFSET) {
+                if (pokemonList.length == 0 ) {
 
                     return PokeAPI.getPaginatedList(page, OFFSET).then(function(newPokemonList) {
 

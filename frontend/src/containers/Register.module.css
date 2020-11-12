@@ -10,11 +10,11 @@
 }
 
 .MinorDiv {
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 10%;
+	margin-right: 23%;
 }
 
-.H4 {
+.Label {
 	text-align: left;
 	padding-right: 20px;
 	
@@ -22,6 +22,9 @@
 
 .Input {
 	float: right;
-	
-	
+}
+
+.LabelDiv {
+	padding-top: 10px;
+	padding-bottom: 9px;
 }
