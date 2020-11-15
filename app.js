@@ -23,7 +23,7 @@ app.use(cookierParser());
 require('./routes/authRoutes')(app);
 require('./routes/pokemonRoutes')(app);
 
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, './frontend/build')));
 
 app.listen(5000, () => {
     console.log('Starting express on port 5000');
