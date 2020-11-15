@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon app.js",
-    "matt": "MONGODSN=mongodb://root:password@localhost:27017/pokedex?authSource=admin nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
