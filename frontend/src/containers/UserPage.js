@@ -24,8 +24,7 @@ class UserPage extends Component {
 
     async componentDidMount() {
         const favoritePokemonIds = await favoriteService.getAll();
-        console.log(favoritePokemonIds)
-    this.setState({
+        this.setState({
             pokemon: await this.gettingPokemonById(favoritePokemonIds),
             favoritePokemonIds: favoritePokemonIds,
             
@@ -59,7 +58,6 @@ class UserPage extends Component {
 
     gettingPokemonById = async (favoritePokemonIds) => {
         const gettingPokemon = await Promise.all(favoritePokemonIds.map(pokemonId => pokemonService.getPokemonById(pokemonId)))
-        console.log(gettingPokemon)
         return this.quickSortFavorites(gettingPokemon)
     }
 

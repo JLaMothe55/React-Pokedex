@@ -5,7 +5,6 @@ const getAll = async (page) => {
     const res = await axios.get(`/api/pokemon?page=${page}`)
         .catch(err => console.error(err));
     if (!res) return [];
-    console.log(res.data.pokemon);
     return res.data.pokemon;
 };
 

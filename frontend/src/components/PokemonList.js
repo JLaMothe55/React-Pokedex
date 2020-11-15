@@ -2,31 +2,20 @@ import React, { Component } from 'react';
 
 import classes from './PokemonList.module.css';
 
-
-
-//{(elipsedName <= 10 ) ? (elipsedName += letter) : (elipsedName += '...') }
-//pokemon.name.forEach(letter => ())
-
 class PokemonList extends Component {
     constructor(props) {
         super(props);
-        
     }
 
     nameElipses = (name) => {
-        
         return name.slice(0, 7).concat("...")
-
-        // let elipsedName = "";
-        // name.split('').forEach(letter => {(elipsedName.length <= 10) ? (elipsedName += letter) : (elipsedName += '...') } );
-        // return elipsedName
     }
     
     pokemonFilter = (pokemon) => pokemon.id >= this.props.idStart && pokemon.id <= this.props.idEnd;
     
 
     renderPokemonSummary = (pokemon) => (
-    <div className={classes.Divencase} onClick={() => this.props.onClickHandler(pokemon)}>
+        <div className={classes.Divencase} onClick={() => this.props.onClickHandler(pokemon)}>
             
 			{(pokemon.sprites[0]) ? (<img className={classes.ImageStyling} src={pokemon.sprites[0].front_default} />) : (<p>no image found</p>)}
             
@@ -36,8 +25,6 @@ class PokemonList extends Component {
             
         </div>
     );
-
-
 
     render(){
         return (
@@ -49,14 +36,5 @@ class PokemonList extends Component {
         );
     }
 };
-
-
-
-    
-
-   
-    
-    
-
 
 export default PokemonList;
