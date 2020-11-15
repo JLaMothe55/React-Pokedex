@@ -25,6 +25,6 @@ require('./routes/pokemonRoutes')(app);
 
 app.use(express.static(path.join(__dirname, './frontend/build')));
 
-app.listen(5000, () => {
-    console.log('Starting express on port 5000');
+app.listen(process.env.PORT ? process.env.PORT : 5000, () => {
+    console.log(`Starting express on port ${process.env.PORT ? process.env.PORT : 5000}`);
 });
