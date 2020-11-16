@@ -3,7 +3,7 @@ You can log into the site and add your favorite pokemon to your user page by sel
 To navigate the Pokedex by Pokemon generation select the desired generation view at the top of the Pokedex.
 As you scroll down more Pokemon will be loaded.
 
-Futture added features:
+Future added features:
 
 Mobile compatibility
 Pokemon abilities showcased on each individual pokemon
