@@ -37,9 +37,9 @@ class Auth extends Component {
     render() {
 
         if (this.state.redirect) {
-            return (<Redirect to='/' />);
+            return (<Redirect to='/pokedex' />);
         }
-
+        
         return (
 			<div className={classes.MainDiv}>
                 <h3>Sign In!</h3>

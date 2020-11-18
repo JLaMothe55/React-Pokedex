@@ -13,7 +13,7 @@ class Layout extends Component {
                     <p className={classes.Info} onClick={() => this.props.logout()}>Signout</p>
                 )}
                 
-                <Link to="/" className={classes.Info}>Home</Link>
+                <Link to="/pokedex" className={classes.Info}>Home</Link>
                 {(!this.props.loggedIn) ? (
                     <Link to="/register" className={classes.Info}>Register</Link>
                 ) : (
