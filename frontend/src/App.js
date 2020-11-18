@@ -68,7 +68,7 @@ class App extends Component{
       <Aux>
         <Router>
           <Route exact path="/">
-            <About styles={{ backgroundImage:`url(https://external-preview.redd.it/67dDnuxdsB8zPNcQcmWERHC7iNHgxBr3r7-V2xM_-M0.jpg?auto=webp&s=69db98a7c9c5aecdd0faa43f176b464956ef0ec5)` }}/>
+            <About/>
           </Route>
           <div style={{marginTop: "80px"}}>
             <Switch>
