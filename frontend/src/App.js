@@ -15,8 +15,7 @@ import FeaturedPokedex from './containers/FeaturedPokedex';
 import Layout from './containers/Layout';
 import Register from './containers/Register';
 import UserPage from './containers/UserPage';
-
-import './App.css';
+import About from './components/About';
 
 class App extends Component{
 
@@ -37,7 +36,6 @@ class App extends Component{
   }
 
   checkSession = async () => {
-      // Joseph should put this in a service
       const res = await axios.get('/api/sessioninfo')
         .catch(err => console.log(err));
 
@@ -63,27 +61,35 @@ class App extends Component{
     })
 }
 
+
+
   render() {
     return (
       <Aux>
         <Router>
-          <Layout loggedIn={this.state.loggedIn} logout={this.logout}/>
+          <Route exact path="/">
+            <About styles={{ backgroundImage:`url(https://external-preview.redd.it/67dDnuxdsB8zPNcQcmWERHC7iNHgxBr3r7-V2xM_-M0.jpg?auto=webp&s=69db98a7c9c5aecdd0faa43f176b464956ef0ec5)` }}/>
+          </Route>
           <div style={{marginTop: "80px"}}>
             <Switch>
-              <Route exact path="/">
+              <Route path="/pokedex">
                 <FeaturedPokedex loggedIn={this.state.loggedIn}/>
+                <Layout loggedIn={this.state.loggedIn} logout={this.logout}/>
               </Route>
               <Route path="/auth">
                 <Auth checkSession={this.checkSession} />
+                <Layout loggedIn={this.state.loggedIn} logout={this.logout}/>
               </Route>
               <Route path="/register">
                 <Register />
+                <Layout loggedIn={this.state.loggedIn} logout={this.logout}/>
               </Route>
               <Route path="/userPage">
                 <UserPage loggedIn={this.state.loggedIn} />
+                <Layout loggedIn={this.state.loggedIn} logout={this.logout}/>
               </Route>
             </Switch>
-          </div>
+            </div>
         </Router>
       </Aux>
     );
