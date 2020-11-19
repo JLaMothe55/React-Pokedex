@@ -19,7 +19,7 @@ class PokemonList extends Component {
             
 			{(pokemon.sprites[0]) ? (<img className={classes.ImageStyling} src={pokemon.sprites[0].front_default} />) : (<p>no image found</p>)}
             
-            <p>#{pokemon.id}</p>
+            <p className={classes.Name}>#{pokemon.id}</p>
 
             {(pokemon.name.length <= 10) ? (<p className={classes.Name}>{pokemon.name}</p>) : (<p className={classes.Name}>{this.nameElipses(pokemon.name)}</p>)}
             

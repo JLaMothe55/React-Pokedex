@@ -1,8 +1,8 @@
 .MainDiv {
 	text-align: center;
 	margin-top: 5%;
-	margin-left: 31%;
-	margin-right: 31%;
+	margin-left: 15%;
+	margin-right: 15%;
 	border-style: solid;
 	padding-bottom: 30px;
 	border-color: black;
@@ -11,20 +11,53 @@
 
 .MinorDiv {
 	margin-left: 10%;
-	margin-right: 23%;
+	margin-right: 10%;
 }
 
 .Label {
-	text-align: left;
-	padding-right: 20px;
+	text-align: center;
 	
 }
 
 .Input {
-	float: right;
+	align-items: center;
 }
 
 .LabelDiv {
-	padding-top: 10px;
-	padding-bottom: 9px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+@media(min-width: 500px){
+	.MainDiv {
+		text-align: center;
+		margin-top: 5%;
+		margin-left: 31%;
+		margin-right: 31%;
+		border-style: solid;
+		padding-bottom: 30px;
+		border-color: black;
+		border-width: 2px
+	}
+	
+	.MinorDiv {
+		margin-left: 10%;
+		margin-right: 23%;
+	}
+	
+	.Label {
+		text-align: left;
+		padding-right: 20px;
+		
+	}
+	
+	.Input {
+		float: right;
+	}
+	
+	.LabelDiv {
+		padding-top: 10px;
+		padding-bottom: 9px;
+	}
 }
