@@ -1,4 +1,3 @@
-
 .Link{
     padding-left: 5px;
     padding-right: 5px;
@@ -6,12 +5,12 @@
 
 .ThirdDiv{
     margin: auto;
-    width: 50%;
+    width: 70%;
     border: 9px solid black;
     text-align: center;
 }
  .FourthDiv{
-    padding: 30px;
+    padding: 21px;
     background-color: red;
  }
 
@@ -33,6 +32,44 @@
         display: block;
         margin: 0 auto;
     
+ }
+
+ @media(min-width: 500px){
+    .Link{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .ThirdDiv{
+        margin: auto;
+        width: 50%;
+        border: 9px solid black;
+        text-align: center;
+    }
+     .FourthDiv{
+        padding: 30px;
+        background-color: red;
+     }
+    
+     .FifthDiv{
+         background-color: white;
+         border: 2px solid black;
+         padding: 5px;
+     }
+    
+     .SecondDiv{
+        margin: auto;
+        width: 50%;
+        padding-top: 1%;
+     }
+    
+     .Img{
+            max-width: 70%;
+            max-height: 90%;
+            display: block;
+            margin: 0 auto;
+        
+     }
  }
 
  

@@ -2,20 +2,47 @@
 	position: fixed;
 	z-index: 500;
 	background-color: white;
-	width: 30%;
+	width: 70%;
 	border: 1px solid #ccc;
 	box-shadow: 1px 1px 1px black;
 	padding: 16px;
-	left: 35%;
+	left: 16%;
 	top: 10%;
 	box-sizing: border-box;
 	transition: all 0.3s ease-out;
 	overflow: auto;
-	height: 800px;
+	height: 650px;
 }
 
 .Button {
 	float: right;
 	background-color: red;
 }
+
+
+
+@media (min-width: 500px){
+	.Modal {
+		position: fixed;
+		z-index: 500;
+		background-color: white;
+		width: 30%;
+		border: 1px solid #ccc;
+		box-shadow: 1px 1px 1px black;
+		padding: 16px;
+		left: 35%;
+		top: 10%;
+		box-sizing: border-box;
+		transition: all 0.3s ease-out;
+		overflow: auto;
+		height: 800px;
+	}
+	
+	.Button {
+		float: right;
+		background-color: red;
+	}
+}
+
+
 
