@@ -8,7 +8,7 @@ const app = express();
 
 mongoose.connect(
     process.env.MONGODSN ? process.env.MONGODSN : 'mongodb://localhost:27017/pokedex', 
-    {   useNewUrlParser: true,
+    process.env.NO_MONGO_AUTH ? undefined : {   useNewUrlParser: true,
         user: process.env.MONGO_USER ? process.env.MONGO_USER : 'root',
         pass: process.env.MONGO_PASSWORD ? process.env.MONGO_PASSWORD : 'password',
         authSource: "admin"

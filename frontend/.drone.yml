@@ -1,0 +1,24 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build backend & frontend
+    image: docker.thiccdata.io/nvm-node-debian:latest
+    commands:
+      - docker build -t docker.thiccdata.io/react-pokedex-backend:latest .
+      - docker build -t docker.thiccdata.io/react-pokedex-frontend:latest frontend/
+      - docker push docker.thiccdata.io/react-pokedex-backend:latest
+      - docker push docker.thiccdata.io/react-pokedex-frontend:latest
+    volumes:
+      - name: docker
+        path: /var/run/docker.sock
+
+trigger:
+  branch:
+    - master
+
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
